@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
+using TempEmbeddin2302C2.Models;
+
 namespace TempEmbeddin2302C2.Controllers
 {
     public class AdminController : Controller
@@ -16,6 +18,25 @@ namespace TempEmbeddin2302C2.Controllers
                 return RedirectToAction("Login");
             }
         }
+        public IActionResult AddUser()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult AddUser(User user)
+        {
+            if (ModelState.IsValid)
+            {
+                return Content("Data is all good to be inserted in database");
+            }
+            else
+            {
+
+            return View();
+            }
+        }
+
 
         public IActionResult Login()                                                              
         {
@@ -49,6 +70,16 @@ namespace TempEmbeddin2302C2.Controllers
                 ViewBag.msg = "Invalid credentials";
             return View();
             }
+        }
+
+
+        public IActionResult AdminLogout()
+        {
+            HttpContext.Session.Clear();
+            HttpContext.Session.Remove("role");
+            HttpContext.Session.Remove("email");
+            return RedirectToAction("Login");
+
         }
 
 

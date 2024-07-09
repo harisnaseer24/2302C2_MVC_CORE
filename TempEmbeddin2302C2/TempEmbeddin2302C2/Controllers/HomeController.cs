@@ -11,15 +11,25 @@ namespace TempEmbeddin2302C2.Controllers
   
         public IActionResult Index()
         {
+
+            if (HttpContext.Session.GetString("role") == "user")
+            {
+
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login","Admin");
+            }
             //data can be accessed on same view
-            ViewBag.name = "Haris Naseer";
-            ViewData["email"] = "haris@gmail.com";
+            //ViewBag.name = "Haris Naseer";
+            //ViewData["email"] = "haris@gmail.com";
 
 
-            //data can be accessed on other view as well as other controllers
-            TempData["phone"] = "03241257793";
+            ////data can be accessed on other view as well as other controllers
+            //TempData["phone"] = "03241257793";
 
-            return View();
+            //return View();
         }
 
         public IActionResult About()
