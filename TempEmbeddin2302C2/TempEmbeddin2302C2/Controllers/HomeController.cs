@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 using TempEmbeddin2302C2.Models;
@@ -8,19 +9,22 @@ namespace TempEmbeddin2302C2.Controllers
 {
     public class HomeController : Controller
     {
-  
+
+
+        //[Authorize(Roles = "User")]
+        [Authorize]
         public IActionResult Index()
         {
+            return View();
+            //if (HttpContext.Session.GetString("role") == "user")
+            //{
 
-            if (HttpContext.Session.GetString("role") == "user")
-            {
-
-                return View();
-            }
-            else
-            {
-                return RedirectToAction("Login","Admin");
-            }
+            //    return View();
+            //}
+            //else
+            //{
+            //    return RedirectToAction("Login","Admin");
+            //}
             //data can be accessed on same view
             //ViewBag.name = "Haris Naseer";
             //ViewData["email"] = "haris@gmail.com";

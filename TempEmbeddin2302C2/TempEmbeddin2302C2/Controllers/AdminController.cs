@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 using TempEmbeddin2302C2.Models;
 
@@ -6,17 +7,20 @@ namespace TempEmbeddin2302C2.Controllers
 {
     public class AdminController : Controller
     {
+        [Authorize(Roles ="Admin")]
         public IActionResult Index()
         {
-            if(HttpContext.Session.GetString("role") == "admin")
-            {
-
             return View();
-            }
-            else
-            {
-                return RedirectToAction("Login");
-            }
+
+            //if(HttpContext.Session.GetString("role") == "admin")
+            //{
+
+            //return View();
+            //}
+            //else
+            //{
+            //    return RedirectToAction("Login");
+            //}
         }
         public IActionResult AddUser()
         {

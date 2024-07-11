@@ -19,6 +19,8 @@ public partial class FoodiContext : DbContext
 
     public virtual DbSet<Menu> Menus { get; set; }
 
+    public virtual DbSet<Product> Products { get; set; }
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
         => optionsBuilder.UseSqlServer("data source=.;initial catalog=foodi;user id=sa;password=aptech; TrustServerCertificate=True");
@@ -56,6 +58,26 @@ public partial class FoodiContext : DbContext
                 .HasMaxLength(250)
                 .HasColumnName("namee");
             entity.Property(e => e.Price).HasColumnName("price");
+        });
+
+        modelBuilder.Entity<Product>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__product__3214EC0752002588");
+
+            entity.ToTable("product");
+
+            entity.Property(e => e.Catid).HasColumnName("catid");
+            entity.Property(e => e.Imagepath)
+                .HasMaxLength(250)
+                .HasColumnName("imagepath");
+            entity.Property(e => e.Proname)
+                .HasMaxLength(250)
+                .HasColumnName("proname");
+            entity.Property(e => e.Qty).HasColumnName("qty");
+
+            entity.HasOne(d => d.Cat).WithMany(p => p.Products)
+                .HasForeignKey(d => d.Catid)
+                .HasConstraintName("FK_product_ToTable");
         });
 
         OnModelCreatingPartial(modelBuilder);

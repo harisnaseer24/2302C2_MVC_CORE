@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "bSga4pRCFhtbpdxlI8MPVH+DBgTgJ5O+PdIRBXfr8k8=",
+  "Hash": "LIEyOqbTgsXO29e2vCbE4lWx4wkWNhBaeYy7ebT1QlU=",
   "Source": "db1",
   "BasePath": "_content/db1",
   "Mode": "Default",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\harisnaseer\\OneDrive\\Desktop\\Haris Naseer\\3RD SEMESTER\\2302C2 .Net\\db1\\db1\\wwwroot\\Image\\devh.PNG",
+      "SourceId": "db1",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\harisnaseer\\OneDrive\\Desktop\\Haris Naseer\\3RD SEMESTER\\2302C2 .Net\\db1\\db1\\wwwroot\\",
+      "BasePath": "_content/db1",
+      "RelativePath": "Image/devh.PNG",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Image\\devh.PNG"
     },
     {
       "Identity": "C:\\Users\\harisnaseer\\OneDrive\\Desktop\\Haris Naseer\\3RD SEMESTER\\2302C2 .Net\\db1\\db1\\wwwroot\\js\\site.js",

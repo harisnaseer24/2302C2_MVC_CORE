@@ -12,4 +12,6 @@ public partial class Menu
     public string? Descrp { get; set; }
 
     public int? Price { get; set; }
+
+    public virtual ICollection<Product> Products { get; set; } = new List<Product>();
 }
