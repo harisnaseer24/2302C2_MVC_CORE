@@ -145,8 +145,6 @@ namespace db1.Controllers
         [HttpGet]
         public IActionResult proUpdate(int id)
         {
-
-
             ViewData["CatId"] = new SelectList(db.Menus, "Id", "Namee");
             var data = db.Products.Find(id);
             return View(data);
@@ -172,14 +170,12 @@ namespace db1.Controllers
                     vs.Imagepath = dbimage;
                     db.Update(vs);
                     db.SaveChanges();
-
                 }
                 else
                 {
                     vs.Imagepath = hid;
                     db.Update(vs);
-                    db.SaveChanges();
-
+                    db.SaveChanges(); 
                 }
 
             }
