@@ -6,7 +6,7 @@ namespace TempEmbeddin2302C2.Controllers
 {
     public class ProductController : Controller
     {
-        _2302c2ecommerceContext db= new _2302c2ecommerceContext();
+        _2302c2EcommerceContext db= new _2302c2EcommerceContext();
         public IActionResult Index()
         {
             return View(db.Products.ToList());
@@ -47,13 +47,11 @@ namespace TempEmbeddin2302C2.Controllers
                 db.Products.Update(prd);
                 db.SaveChanges();
                 return RedirectToAction("Index");
-
             }
             else
             {
                 return View();
             }
-
         }
 
         public IActionResult Delete(int id)
