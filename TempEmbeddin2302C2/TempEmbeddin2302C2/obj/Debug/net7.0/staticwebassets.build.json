@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "N959ynGIJOrSIwlFAuxIRwKvEwRum7OEElzngsQFdKs=",
+  "Hash": "6EF5na8XX7As/vsV8OxYaSCHaGuLnaWxxJwOx0GByc8=",
   "Source": "TempEmbeddin2302C2",
   "BasePath": "_content/TempEmbeddin2302C2",
   "Mode": "Default",
@@ -6628,6 +6628,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Uploads\\245125115141-657a89219e0ee.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\harisnaseer\\OneDrive\\Desktop\\Haris Naseer\\3RD SEMESTER\\2302C2 .Net\\TempEmbeddin2302C2\\TempEmbeddin2302C2\\wwwroot\\Uploads\\245430115450-6577f4237c33f.jpg",
+      "SourceId": "TempEmbeddin2302C2",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\harisnaseer\\OneDrive\\Desktop\\Haris Naseer\\3RD SEMESTER\\2302C2 .Net\\TempEmbeddin2302C2\\TempEmbeddin2302C2\\wwwroot\\",
+      "BasePath": "_content/TempEmbeddin2302C2",
+      "RelativePath": "Uploads/245430115450-6577f4237c33f.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\245430115450-6577f4237c33f.jpg"
     }
   ]
 }
