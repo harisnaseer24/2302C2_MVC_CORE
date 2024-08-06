@@ -1,17 +1,19 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
 
-namespace TempEmbeddin2302C2.Models
+namespace TempEmbeddin2302C2.Models;
+
+public partial class User
 {
-    public class User
-    {
-        [Key]
-        public int Id { get; set; }
-        [Required]
-        public string username { get; set; }
+    public int Id { get; set; }
 
-        [RegularExpression("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$")]
-        public string email { get; set; }
-        [Required]
-        public string password { get; set; }
-    }
+    public string Username { get; set; } = null!;
+
+    public string Email { get; set; } = null!;
+
+    public string Password { get; set; } = null!;
+
+    public int RoleId { get; set; }
+
+    public int Status { get; set; }
 }

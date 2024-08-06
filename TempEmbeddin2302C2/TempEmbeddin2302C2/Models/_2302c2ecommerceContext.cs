@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace TempEmbeddin2302C2.Models;
 
-public partial class _2302c2EcommerceContext : DbContext
+public partial class _2302c2ecommerceContext : DbContext
 {
-    public _2302c2EcommerceContext()
+    public _2302c2ecommerceContext()
     {
     }
 
-    public _2302c2EcommerceContext(DbContextOptions<_2302c2EcommerceContext> options)
+    public _2302c2ecommerceContext(DbContextOptions<_2302c2ecommerceContext> options)
         : base(options)
     {
     }
@@ -21,22 +21,24 @@ public partial class _2302c2EcommerceContext : DbContext
 
     public virtual DbSet<Product> Products { get; set; }
 
+    public virtual DbSet<User> Users { get; set; }
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("data source=.;initial catalog=2302c2Ecommerce;user id=sa;password=aptech; TrustServerCertificate=True");
+        => optionsBuilder.UseSqlServer("data source=.;initial catalog=2302C2Ecommerce;user id=sa;password=aptech; TrustServerCertificate=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Category>(entity =>
         {
-            entity.HasKey(e => e.CatId).HasName("PK__Categori__6A1C8AFA11D47D18");
+            entity.HasKey(e => e.CatId).HasName("PK__Categori__6A1C8AFA96A3C7D4");
 
             entity.Property(e => e.CatName).HasMaxLength(50);
         });
 
         modelBuilder.Entity<Item>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Items__3214EC076421F647");
+            entity.HasKey(e => e.Id).HasName("PK__Items__3214EC07C38E4335");
 
             entity.Property(e => e.Description).HasColumnName("description");
             entity.Property(e => e.Image).HasColumnName("image");
@@ -52,7 +54,7 @@ public partial class _2302c2EcommerceContext : DbContext
 
         modelBuilder.Entity<Product>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__products__3214EC070EDF6A98");
+            entity.HasKey(e => e.Id).HasName("PK__products__3214EC07FA48001E");
 
             entity.ToTable("products");
 
@@ -61,6 +63,23 @@ public partial class _2302c2EcommerceContext : DbContext
                 .HasMaxLength(50)
                 .HasColumnName("name");
             entity.Property(e => e.Price).HasColumnName("price");
+        });
+
+        modelBuilder.Entity<User>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__Users__3214EC07E3F44E2A");
+
+            entity.Property(e => e.Email)
+                .HasMaxLength(100)
+                .HasColumnName("email");
+            entity.Property(e => e.Password).HasColumnName("password");
+            entity.Property(e => e.RoleId)
+                .HasDefaultValueSql("((2))")
+                .HasColumnName("roleId");
+            entity.Property(e => e.Status).HasColumnName("status");
+            entity.Property(e => e.Username)
+                .HasMaxLength(50)
+                .HasColumnName("username");
         });
 
         OnModelCreatingPartial(modelBuilder);

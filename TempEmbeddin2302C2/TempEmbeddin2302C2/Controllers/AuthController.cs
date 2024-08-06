@@ -4,10 +4,22 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 
+using TempEmbeddin2302C2.Models;
+
 namespace TempEmbeddin2302C2.Controllers
 {
     public class AuthController : Controller
     {
+        private readonly _2302c2ecommerceContext db;
+        public AuthController(_2302c2ecommerceContext _db)
+        {
+            db = _db;
+        }
+        public IActionResult Signup()
+        {
+            return View();
+        }
+
         public IActionResult Login()
         {
             return View();

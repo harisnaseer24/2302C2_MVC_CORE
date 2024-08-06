@@ -11,9 +11,9 @@ namespace TempEmbeddin2302C2.Controllers
 	{
 		//_2302c2ecommerceContext db = new _2302c2ecommerceContext();
 
-		private readonly _2302c2EcommerceContext db;
+		private readonly _2302c2ecommerceContext db;
 
-		public ItemController(_2302c2EcommerceContext _db)
+		public ItemController(_2302c2ecommerceContext _db)
 		{
 			db = _db;
 		}

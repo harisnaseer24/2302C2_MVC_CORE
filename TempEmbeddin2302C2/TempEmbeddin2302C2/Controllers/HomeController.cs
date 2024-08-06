@@ -10,9 +10,9 @@ namespace TempEmbeddin2302C2.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly _2302c2EcommerceContext db;
+        private readonly _2302c2ecommerceContext db;
 
-        public HomeController(_2302c2EcommerceContext _db)
+        public HomeController(_2302c2ecommerceContext _db)
         {
             db = _db;
         }
