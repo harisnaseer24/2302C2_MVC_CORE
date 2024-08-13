@@ -40,12 +40,35 @@ namespace TempEmbeddin2302C2.Controllers
             var data = db.Items.Include(item => item.Cat);
             return View(data.ToList());
         }
+
+        [Authorize (Roles ="User")]
         public IActionResult Details(int id)
         {
             var data = db.Items.Include(item => item.Cat);
             var item = data.FirstOrDefault(prd =>prd.Id == id );
 
+           if(item != null)
+            {
+                Cart cart = new Cart();
+                ViewBag.Cart = cart;
+
             return View(item);
+            }
+            else
+            {
+            return RedirectToAction("Products");
+            }
+            
+        }
+        [Authorize(Roles = "User")]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult AddToCart(Cart cart)
+        {
+            cart.Total = cart.Price * cart.Qty;
+            db.Carts.Add(cart); 
+            db.SaveChanges();
+            return RedirectToAction("Products");
         }
 
     }
