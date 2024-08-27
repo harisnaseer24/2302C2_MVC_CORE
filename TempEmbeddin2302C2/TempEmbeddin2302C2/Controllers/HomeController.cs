@@ -1,5 +1,7 @@
 ﻿using System.Diagnostics;
 
+using _2302b1TempEmbedding.Models;
+
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -91,6 +93,39 @@ namespace TempEmbeddin2302C2.Controllers
             
             return RedirectToAction("Products");
         }
+
+        public IActionResult MyCart()
+        {
+            var userId = Convert.ToInt32(HttpContext.Session.GetInt32("UserID"));
+
+            var cartItems = from cart in db.Carts
+                            join item in db.Items on cart.ItemId equals item.Id
+                            where cart.UserId == userId
+                            select new CartViewModel
+                            {
+                                CartId = cart.Id,
+                                ProductName = item.Name,
+                                Description = item.Description,
+                                Price = item.Price,
+                                Quantity = cart.Qty,
+                                TotalPrice = cart.Total,
+                            };
+
+            if (cartItems != null)
+            {
+
+                return View(cartItems);
+
+            }
+            else
+            {
+                ViewBag.msg = "No products found. Shop now";
+                return View(cartItems);
+            }
+
+        }
+
+
 
     }
 }

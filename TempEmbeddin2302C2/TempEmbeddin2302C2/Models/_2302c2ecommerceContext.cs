@@ -21,6 +21,12 @@ public partial class _2302c2ecommerceContext : DbContext
 
     public virtual DbSet<Item> Items { get; set; }
 
+    public virtual DbSet<Order> Orders { get; set; }
+
+    public virtual DbSet<OrderDetail> OrderDetails { get; set; }
+
+    public virtual DbSet<Payment> Payments { get; set; }
+
     public virtual DbSet<Product> Products { get; set; }
 
     public virtual DbSet<User> Users { get; set; }
@@ -70,6 +76,60 @@ public partial class _2302c2ecommerceContext : DbContext
             entity.HasOne(d => d.Cat).WithMany(p => p.Items)
                 .HasForeignKey(d => d.CatId)
                 .HasConstraintName("FK_Items_ToTable");
+        });
+
+        modelBuilder.Entity<Order>(entity =>
+        {
+            entity.HasKey(e => e.OrderId).HasName("PK__Orders__C3905BCFA241CEF6");
+
+            entity.Property(e => e.OrderDate)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+            entity.Property(e => e.PaymentType)
+                .HasMaxLength(50)
+                .HasDefaultValueSql("('COD')");
+            entity.Property(e => e.Phone).HasMaxLength(20);
+
+            entity.HasOne(d => d.User).WithMany(p => p.Orders)
+                .HasForeignKey(d => d.UserId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_Orders_ToUser");
+        });
+
+        modelBuilder.Entity<OrderDetail>(entity =>
+        {
+            entity.HasKey(e => e.OrderDetailId).HasName("PK__OrderDet__D3B9D36C81336E83");
+
+            entity.Property(e => e.OrderDate)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+
+            entity.HasOne(d => d.Item).WithMany(p => p.OrderDetails)
+                .HasForeignKey(d => d.ItemId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_OrderDetails_ToItems");
+
+            entity.HasOne(d => d.Order).WithMany(p => p.OrderDetails)
+                .HasForeignKey(d => d.OrderId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_OrderDetails_ToOrders");
+
+            entity.HasOne(d => d.User).WithMany(p => p.OrderDetails)
+                .HasForeignKey(d => d.UserId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_OrderDetails_ToUsers");
+        });
+
+        modelBuilder.Entity<Payment>(entity =>
+        {
+            entity.HasKey(e => e.PaymentId).HasName("PK__Payments__9B556A38803EA923");
+
+            entity.Property(e => e.CardHolderName).HasMaxLength(50);
+            entity.Property(e => e.Cvc).HasColumnName("CVC");
+            entity.Property(e => e.OrderId).HasColumnName("OrderID");
+            entity.Property(e => e.PaymentDate)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
         });
 
         modelBuilder.Entity<Product>(entity =>

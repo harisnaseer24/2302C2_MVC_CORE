@@ -18,4 +18,8 @@ public partial class User
     public int Status { get; set; }
 
     public virtual ICollection<Cart> Carts { get; set; } = new List<Cart>();
+
+    public virtual ICollection<OrderDetail> OrderDetails { get; set; } = new List<OrderDetail>();
+
+    public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
 }
