@@ -89,7 +89,7 @@ namespace TempEmbeddin2302C2.Controllers
                     isAuthenticated = true;
                     controller = "Home";
                     HttpContext.Session.SetInt32("UserID", checkUser.Id);
-                    HttpContext.Session.SetString("UserEmail", checkUser.Email); ;
+                    HttpContext.Session.SetString("UserEmail", checkUser.Email); 
                 }
                 else
                 {

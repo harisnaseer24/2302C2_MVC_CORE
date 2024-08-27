@@ -1,13 +1,10 @@
 ﻿@model TempEmbeddin2302C2.Models.Item
 @using System.Security.Claims;
-
-@{
-    ViewData["Title"] = "Details";
+@{ViewData["Title"] = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    var userId = Convert.ToInt32(ClaimTypes.Sid);
+    // var userId = Convert.ToInt32(ClaimTypes.Sid);
     var cart = ViewBag.Cart as TempEmbeddin2302C2.Models.Cart;
-    // var userId = Convert.ToInt32(Context.Session.GetInt32("UserID"));
-
+    var userId = Convert.ToInt32(Context.Session.GetInt32("UserID"));
 }
 
 <!-- About Start -->
