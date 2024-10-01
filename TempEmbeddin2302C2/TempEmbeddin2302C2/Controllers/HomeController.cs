@@ -125,6 +125,12 @@ namespace TempEmbeddin2302C2.Controllers
 
         }
 
+        public IActionResult Checkout(int userid, int total)
+        {
+            ViewBag.total = total;
+
+            return View();
+        }
 
 
     }

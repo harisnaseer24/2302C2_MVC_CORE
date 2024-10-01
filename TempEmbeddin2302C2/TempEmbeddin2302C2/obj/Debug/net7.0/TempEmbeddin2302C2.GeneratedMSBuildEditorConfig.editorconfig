@@ -10,6 +10,8 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = TempEmbeddin2302C2
 build_property.RootNamespace = TempEmbeddin2302C2
 build_property.ProjectDir = C:\Users\harisnaseer\OneDrive\Desktop\Haris Naseer\3RD SEMESTER\2302C2 .Net\TempEmbeddin2302C2\TempEmbeddin2302C2\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
@@ -42,6 +44,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/harisnaseer/OneDrive/Desktop/Haris Naseer/3RD SEMESTER/2302C2 .Net/TempEmbeddin2302C2/TempEmbeddin2302C2/Views/Home/About.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/harisnaseer/OneDrive/Desktop/Haris Naseer/3RD SEMESTER/2302C2 .Net/TempEmbeddin2302C2/TempEmbeddin2302C2/Views/Home/Checkout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDaGVja291dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/harisnaseer/OneDrive/Desktop/Haris Naseer/3RD SEMESTER/2302C2 .Net/TempEmbeddin2302C2/TempEmbeddin2302C2/Views/Home/Contact.cshtml]

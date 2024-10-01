@@ -4,6 +4,8 @@
 @{
     ViewData["Title"] = "My Cart";
     var userRole = Context.Session.GetString("Role");
+    int UserID = Convert.ToInt32(Context.Session.GetInt32("UserID"));
+    var total = 0;
 
 }
 
@@ -22,6 +24,7 @@
     <tbody>
         @foreach (var item in Model)
         {
+            total += item.TotalPrice;
             <tr>
                 <td>@item.ProductName</td>
                 <td>@item.Description</td>
@@ -48,14 +51,21 @@
     </tbody>
 </table>
 
+<h1>
+    Subtotal : Rs. @total
+
+</h1>
+<a type="submit" class="btn btn-primary" asp-action="Checkout" asp-controller="Home" asp-route-userid="@UserID" asp-route-total="@total">Proceed to Checkout</a>
+
+
 <p>
-  @*   <form asp-action="UpdateQuantity" method="post" class="form-group">
-        <input type="hidden" name="cartId" value="@item.CartId" />
-        <input type="number" name="quantity" value="@item.Quantity" min="1" class="form-control" style="width: 80px;" />
-        <button type="submit"  class="btn btn-primary">Proceed to Checkout</button>
+@*     <form asp-action="UpdateQuantity" method="post" class="form-group">
+           <input type="hidden" name="cartId" value="@item.CartId" />
+           <input type="number" name="quantity" value="@item.Quantity" min="1" class="form-control" style="width: 80px;" />
+           <button type="submit"  class="btn btn-primary">Proceed to Checkout</button>
         
-    </form>
-    *@
+       </form> *@
+
 </p>
 
 

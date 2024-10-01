@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\harisnaseer\\OneDrive\\Desktop\\Haris Naseer\\3RD SEMESTER\\2302C2 .Net\\webAPITest\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B64F2366-F495-4585-AB0F-A2E71DA540A1}|WebApplication1\\WebApplication1.csproj|c:\\users\\harisnaseer\\onedrive\\desktop\\haris naseer\\3rd semester\\2302c2 .net\\webapitest\\webapplication1\\data\\foodicontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B64F2366-F495-4585-AB0F-A2E71DA540A1}|WebApplication1\\WebApplication1.csproj|solutionrelative:webapplication1\\data\\foodicontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FoodiContext.cs",
+              "DocumentMoniker": "C:\\Users\\harisnaseer\\OneDrive\\Desktop\\Haris Naseer\\3RD SEMESTER\\2302C2 .Net\\webAPITest\\WebApplication1\\Data\\FoodiContext.cs",
+              "RelativeDocumentMoniker": "WebApplication1\\Data\\FoodiContext.cs",
+              "ToolTip": "C:\\Users\\harisnaseer\\OneDrive\\Desktop\\Haris Naseer\\3RD SEMESTER\\2302C2 .Net\\webAPITest\\WebApplication1\\Data\\FoodiContext.cs",
+              "RelativeToolTip": "WebApplication1\\Data\\FoodiContext.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAIwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-23T11:42:11.047Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
